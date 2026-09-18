@@ -1,0 +1,26 @@
+services:
+  proyecto1php:
+    image: php:8.3-apache
+    container_name: php
+    ports:
+      - "8080:80"
+    volumes:
+      - "./src:/var/www/html"
+      - "./.docker/apache/apache.conf:/etc/apache2/sites-enabled/000-default.conf"
+
+  mariadb:
+    image: mariadb:latest
+    container_name: netflixdb
+    environment:
+      MARIADB_DATABASE: netflix
+      MARIADB_USER: miguel
+      MARIADB_PASSWORD: leugim
+      MARIADB_ROOT_PASSWORD: toor
+    ports:
+      - "3310:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+
+volumes:
+  mariadb_data:

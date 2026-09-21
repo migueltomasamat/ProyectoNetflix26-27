@@ -1,0 +1,18 @@
+{
+    "name": "matomas/proyecto1",
+    "description": "Proyecto",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Matomas\\Proyecto1\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Miguel"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

@@ -1,3 +1,5 @@
 .idea
 /src/vendor/
 /.docker/mariadb/
+.env
+/src/composer.lock

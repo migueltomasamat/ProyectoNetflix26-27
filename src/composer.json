@@ -15,6 +15,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "phroute/phroute": "^2.2"
+        "phroute/phroute": "^2.2",
+        "ramsey/uuid": "^4.9.4"
     }
 }

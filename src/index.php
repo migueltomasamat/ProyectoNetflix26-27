@@ -11,6 +11,10 @@ $router->get('/admin', function(){
     return 'Estas intentando acceder a la funcion de admin';
 });
 
+$router->get('/get-uuid', function(){
+    return \Ramsey\Uuid\Uuid::uuid4()->toString();
+});
+
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
 try{

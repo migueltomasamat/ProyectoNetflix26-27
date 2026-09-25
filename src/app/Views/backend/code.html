@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-fixed":"#74fe8e","on-error":"#690005","surface-container-highest":"#353534","on-tertiary-container":"#ecfdff","surface-container-high":"#2a2a2a","background":"#131313","tertiary":"#72d5e1","surface-variant":"#353534","outline":"#af8782","on-secondary-fixed":"#002108","inverse-on-surface":"#313030","tertiary-fixed":"#8ff2fe","surface-container-low":"#1c1b1b","secondary":"#55e074","surface":"#131313","on-surface-variant":"#e9bcb6","inverse-primary":"#c0000c","surface-tint":"#ffb4aa","surface-dim":"#131313","on-error-container":"#ffdad6","on-surface":"#e5e2e1","on-primary-fixed":"#410001","secondary-container":"#02ad49","on-primary-container":"#fff7f6","primary-fixed-dim":"#ffb4aa","on-tertiary-fixed":"#001f23","primary-container":"#e50914","on-primary-fixed-variant":"#930007","on-background":"#e5e2e1","error-container":"#93000a","on-primary":"#690003","primary":"#ffb4aa","on-secondary":"#003913","tertiary-fixed-dim":"#72d5e1","outline-variant":"#5e3f3b","surface-bright":"#393939","on-tertiary":"#00363c","on-tertiary-fixed-variant":"#004f56","error":"#ffb4ab","on-secondary-fixed-variant":"#00531f","surface-container":"#201f1f","secondary-fixed-dim":"#55e074","surface-container-lowest":"#0e0e0e","tertiary-container":"#007f8a","on-secondary-container":"#003712","inverse-surface":"#e5e2e1","primary-fixed":"#ffdad5"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xs":"0.25rem","gutter-sm":"0.75rem","gutter":"1rem","margin-mobile":"1rem","space-2xl":"4rem","gutter-lg":"1.5rem","margin":"3.5rem","space-md":"1rem","space-xl":"2.5rem","margin-tablet":"2rem","space-sm":"0.5rem","space-lg":"1.5rem"},fontFamily:{"badge-spec":["Inter"],"label-md":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"headline-xl-mobile":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"display-hero-mobile":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"display-hero":["Inter"]},fontSize:{"badge-spec":["10px",{lineHeight:"12px",letterSpacing:"0.06em",fontWeight:"800"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl-mobile":["24px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"800"}],"display-hero-mobile":["32px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"800"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"700"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"900"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-gutter flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur-xl"><img alt="Netflix-style bold red monogram letter N icon with sharp cinematic ribbon gradient. Brand logo. - Primary color: #e50914
+- Font: inter
+- Mode: dark
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLhNpsIMY35a2KQfccx7RL5riMbi-q3TA-idNp3pM4Idznv9R8CNdMIretQHqsGnPsc3MbGwacAqHYs5CkMy4ksqippC2xXPF2NiDjCCLgao-eZ1ruKv7RvMDQBNukYCZogc5z9mxG8c7df8vbPkw_2PQu9j4sD9Z3yumBun8myxJkwJoIKvsCf_Ggh9O6pESWXJJJrL0lQ5hIWFzafa862Chhe5TjGlXOzO1A5cn3qqSO6JtBh18rCiE"/><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface tracking-tight uppercase">Netflix Studio</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">CMS Control Center</span></div></div><nav class="px-gutter-sm py-space-sm flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-lg"><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Contenido</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="catalogo-global" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span>Catálogo Global</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="peliculas" href="#"><span class="material-symbols-outlined text-[18px]">movie</span><span>Películas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="series-de-tv" href="#"><span class="material-symbols-outlined text-[18px]">tv</span><span>Series de TV</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="videojuegos" href="#"><span class="material-symbols-outlined text-[18px]">sports_esports</span><span>Videojuegos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="estrenos-programados" href="#"><span class="material-symbols-outlined text-[18px]">schedule</span><span>Estrenos programados</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Analíticas y Audiencia</span><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary-container font-label-md rounded-lg" data-path="estadisticas-de-visionado" href="#"><span class="material-symbols-outlined text-[18px]">insights</span><span>Estadísticas de visionado</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="retencion-y-horas-vistas" href="#"><span class="material-symbols-outlined text-[18px]">timelapse</span><span>Retención y Horas vistas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="metricas-de-videojuegos" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>Métricas de videojuegos</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Moderación y Licencias</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="clasificaciones-de-edad" href="#"><span class="material-symbols-outlined text-[18px]">verified_user</span><span>Clasificaciones de edad</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="derechos-y-drm" href="#"><span class="material-symbols-outlined text-[18px]">lock</span><span>Derechos &amp; DRM</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="localizacion-e-idiomas" href="#"><span class="material-symbols-outlined text-[18px]">translate</span><span>Localización e idiomas</span></a></div><div class="flex flex-col gap-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Configuración</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="gestion-de-usuarios-del-cms" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span>Gestión de usuarios del CMS</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="parametros-del-servidor" href="#"><span class="material-symbols-outlined text-[18px]">dns</span><span>Parámetros del servidor</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="logs-del-sistema" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span>Logs del sistema</span></a></div></nav></div><div class="p-gutter-sm bg-surface-container-low m-space-sm rounded-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface truncate">Carlos Mendoza</span><span class="font-body-sm text-body-sm text-outline">Admin General</span></div></div><div class="flex items-center gap-space-xs bg-surface-container-highest px-space-xs py-[2px] rounded"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-badge-spec text-badge-spec text-secondary uppercase">Online</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-tablet"><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="hover:text-on-surface cursor-pointer">Netflix Studio</span><span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span><span class="text-on-surface">CMS Console</span></div><div class="hidden xl:flex items-center gap-space-xs px-gutter-sm py-space-xs rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-body-sm text-body-sm text-on-surface-variant">Servidores streaming: <strong class="text-secondary font-label-sm text-label-sm">99.98% operativo</strong></span></div></div><div class="flex items-center gap-gutter"><div class="relative flex items-center w-72 md:w-96"><span class="material-symbols-outlined absolute left-space-sm text-outline text-[18px]">search</span><input class="w-full bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded outline-none focus:bg-surface-container-high transition-colors" placeholder="Buscar por título, ID de activo, director, género..." type="text"/></div><button class="flex items-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary-container px-gutter-sm py-space-xs rounded font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[18px]">add</span><span>Nuevo Contenido</span></button><button class="relative p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-primary-container rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full px-margin-tablet bg-background min-h-screen"><div class="flex flex-col w-full pb-space-2xl gap-y-space-xl">
+<!-- Executive Header -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-gutter pb-space-lg bg-gradient-to-b from-surface-container-low/40 to-transparent p-gutter rounded-xl">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span>Métricas En Vivo • Servidor Principal Frankfurt</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+        Panel de Gestión de Contenidos y Métricas de Audiencia
+      </h1>
+<p class="font-body-md text-body-md text-outline">
+        Supervisión en tiempo real de reproducciones, retención y catálogo multimedia global con telemetría integrada de cloud streaming.
+      </p>
+</div>
+<!-- Executive Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative flex items-center bg-surface-container rounded-lg p-1">
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors" id="range-24h" onclick="setActiveRange('24h')">Tiempo real 24h</button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors" id="range-7d" onclick="setActiveRange('7d')">Esta semana</button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md bg-surface-container-highest text-on-surface shadow-sm" id="range-30d" onclick="setActiveRange('30d')">Últimos 30 días</button>
+</div>
+<div class="relative flex items-center bg-surface-container rounded-lg px-space-sm py-1.5">
+<span class="material-symbols-outlined text-[18px] text-outline mr-1.5">public</span>
+<select class="bg-transparent text-on-surface font-label-md text-label-md outline-none cursor-pointer pr-space-xs">
+<option class="bg-surface-container-high text-on-surface" value="global">Global (Todos)</option>
+<option class="bg-surface-container-high text-on-surface" value="latam">LATAM</option>
+<option class="bg-surface-container-high text-on-surface" value="emea">EMEA</option>
+<option class="bg-surface-container-high text-on-surface" value="na">Norteamérica</option>
+<option class="bg-surface-container-high text-on-surface" value="apac">Asia-Pacífico</option>
+</select>
+</div>
+<button class="flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-2 rounded-lg font-label-md text-label-md shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span>Exportar Informe CSV / PDF</span>
+</button>
+</div>
+</div>
+<!-- Top Stat Cards (KPIs) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-gutter">
+<!-- Card 1 -->
+<div class="flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-gutter rounded-xl shadow-md transition-all duration-300 group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Horas de Visionado</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">482.6M <span class="font-label-sm text-label-sm text-outline font-normal">hrs</span></span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">play_circle</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+14.2%</span>
+<span class="text-outline font-normal ml-1">vs mes anterior</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-20 h-6 text-secondary" fill="none" viewbox="0 0 80 24">
+<path d="M2 18 L16 16 L30 19 L44 11 L58 13 L72 4 L78 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-gutter rounded-xl shadow-md transition-all duration-300 group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Usuarios Concurrentes</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">8.4M <span class="font-label-sm text-label-sm text-secondary font-normal">activos</span></span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<span class="text-outline font-body-sm text-body-sm truncate max-w-[120px]">Pico 12.1M (22:00 UTC)</span>
+<!-- Sparkline SVG -->
+<svg class="w-20 h-6 text-tertiary" fill="none" viewbox="0 0 80 24">
+<path d="M2 12 L16 14 L30 8 L44 16 L58 7 L72 3 L78 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-gutter rounded-xl shadow-md transition-all duration-300 group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Catálogo Activo</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">14,820</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">video_library</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between gap-1 text-outline font-badge-spec text-badge-spec">
+<span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">6.2K Films</span>
+<span class="bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">4.9K Series</span>
+<span class="bg-surface-container-high px-1.5 py-0.5 rounded text-tertiary">420 Games</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-gutter rounded-xl shadow-md transition-all duration-300 group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Tiempo Medio Sesión</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">1h 48m</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">avg_time</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+<span>+6.8%</span>
+<span class="text-outline font-normal ml-1">por suscriptor</span>
+</div>
+<svg class="w-20 h-6 text-secondary" fill="none" viewbox="0 0 80 24">
+<path d="M2 19 L18 17 L34 14 L50 15 L64 7 L78 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-gutter rounded-xl shadow-md transition-all duration-300 group md:col-span-2 xl:col-span-1">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Finalización Título</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">72.4%</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">task_alt</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+3.1%</span>
+<span class="text-outline font-normal ml-1">Temporadas/Arcades</span>
+</div>
+<div class="w-16 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-[72.4%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Central Analytics & Charts Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- Main Interactive Visual Stream (7 Cols) -->
+<div class="xl:col-span-7 bg-surface-container-low p-gutter rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Visionado Semanal por Categoría</span>
+<span class="font-body-sm text-body-sm text-outline">Consumo total acumulado en millones de horas (M hrs)</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Películas</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Series TV</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Videojuegos</span>
+</div>
+</div>
+</div>
+<!-- Main Chart SVG Graphic -->
+<div class="relative w-full h-72 sm:h-80 bg-surface-container-lowest/60 rounded-lg p-space-sm flex flex-col justify-end overflow-hidden">
+<!-- Background grid guides -->
+<div class="absolute inset-0 flex flex-col justify-between p-space-md pointer-events-none opacity-20">
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+</div>
+<!-- Simulated Tooltip for Weekend Peak (Sat) -->
+<div class="absolute left-[68%] top-10 transform -translate-x-1/2 z-20 bg-surface-container-highest px-3 py-2 rounded-md shadow-xl pointer-events-none flex flex-col gap-0.5">
+<span class="font-badge-spec text-badge-spec text-secondary tracking-widest uppercase">Sábado • Pico Global</span>
+<div class="flex items-center justify-between gap-4 font-body-sm text-body-sm">
+<span class="text-outline">Series:</span>
+<span class="text-on-surface font-semibold">51.2M hrs</span>
+</div>
+<div class="flex items-center justify-between gap-4 font-body-sm text-body-sm">
+<span class="text-outline">Películas:</span>
+<span class="text-primary font-semibold">38.4M hrs</span>
+</div>
+<div class="flex items-center justify-between gap-4 font-body-sm text-body-sm">
+<span class="text-outline">Juegos:</span>
+<span class="text-tertiary font-semibold">9.8M hrs</span>
+</div>
+</div>
+<!-- SVG Stacked/Overlaid Curves -->
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 700 240">
+<defs>
+<lineargradient id="gradientRed" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#e50914" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#e50914" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="gradientWhite" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#e5e2e1" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#e5e2e1" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Area series -->
+<path d="M 30 180 Q 130 150 230 160 T 430 120 T 530 60 T 670 95 L 670 230 L 30 230 Z" fill="url(#gradientWhite)"></path>
+<path d="M 30 200 Q 130 180 230 190 T 430 150 T 530 90 T 670 140 L 670 230 L 30 230 Z" fill="url(#gradientRed)"></path>
+<!-- Line strokes -->
+<!-- Series de TV (White) -->
+<path d="M 30 180 Q 130 150 230 160 T 430 120 T 530 60 T 670 95" stroke="#e5e2e1" stroke-linecap="round" stroke-width="3"></path>
+<!-- Peliculas (Red) -->
+<path d="M 30 200 Q 130 180 230 190 T 430 150 T 530 90 T 670 140" stroke="#e50914" stroke-linecap="round" stroke-width="3"></path>
+<!-- Videojuegos (Cyan) -->
+<path d="M 30 220 Q 130 215 230 210 T 430 195 T 530 170 T 670 185" stroke="#72d5e1" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Highlighting point for Saturday peak -->
+<circle cx="530" cy="60" fill="#e5e2e1" r="5"></circle>
+<circle cx="530" cy="90" fill="#e50914" r="5"></circle>
+<circle cx="530" cy="170" fill="#72d5e1" r="4"></circle>
+<line stroke="#ffffff" stroke-dasharray="2 2" stroke-opacity="0.3" x1="530" x2="530" y1="30" y2="230"></line>
+</svg>
+<!-- X Axis labels -->
+<div class="flex justify-between px-6 pt-2 font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<span>Lun</span>
+<span>Mar</span>
+<span>Mié</span>
+<span>Jue</span>
+<span>Vie</span>
+<span class="text-on-surface font-bold">Sáb</span>
+<span>Dom</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-outline font-body-sm text-body-sm pt-space-xs">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+          CDN Buffer Latency: 99.4% streaming sin rebuffering
+        </span>
+<button class="text-primary hover:text-on-surface text-label-md font-label-md flex items-center gap-1 transition-colors">
+<span>Ver desglose detallado</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Secondary Donut Chart & Audience Breakdown (5 Cols) -->
+<div class="xl:col-span-5 flex flex-col gap-gutter">
+<!-- Donut Card -->
+<div class="bg-surface-container-low p-gutter rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Distribución por Formato</span>
+<span class="font-body-sm text-body-sm text-outline">Porcentaje de tiempo dedicado por los espectadores</span>
+</div>
+<span class="material-symbols-outlined text-outline">pie_chart</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-lg py-space-xs">
+<!-- Donut SVG -->
+<div class="relative w-44 h-44 flex items-center justify-center shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Series: 54% -> stroke-dasharray 54 100 * circumference (2*pi*r = ~251.2) -->
+<!-- r = 38 => C = 238.76 -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#2a2a2a" stroke-width="12"></circle>
+<!-- Series 54% (128.9 / 238.7) -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#e5e2e1" stroke-dasharray="128.9 238.7" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Peliculas 32% (76.4 / 238.7) -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#e50914" stroke-dasharray="76.4 238.7" stroke-dashoffset="-128.9" stroke-width="12"></circle>
+<!-- Videojuegos 10% (23.8 / 238.7) -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#72d5e1" stroke-dasharray="23.8 238.7" stroke-dashoffset="-205.3" stroke-width="12"></circle>
+<!-- En Directo 4% (9.5 / 238.7) -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#02ad49" stroke-dasharray="9.5 238.7" stroke-dashoffset="-229.1" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">482M</span>
+<span class="font-badge-spec text-badge-spec text-outline uppercase tracking-wider">Horas Totales</span>
+</div>
+</div>
+<!-- Donut Legend with Metrics -->
+<div class="flex flex-col gap-space-xs w-full">
+<div class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-on-surface"></span>
+<span class="font-label-md text-label-md text-on-surface">Series Episódicas</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">54%</span>
+<span class="font-body-sm text-body-sm text-outline">260M hrs</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-primary-container"></span>
+<span class="font-label-md text-label-md text-on-surface">Largometrajes</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">32%</span>
+<span class="font-body-sm text-body-sm text-outline">154M hrs</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-tertiary"></span>
+<span class="font-label-md text-label-md text-on-surface">Netflix Games</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">10%</span>
+<span class="font-body-sm text-body-sm text-outline">48M hrs</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-secondary-container"></span>
+<span class="font-label-md text-label-md text-on-surface">Especiales Directo</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">4%</span>
+<span class="font-body-sm text-body-sm text-outline">20M hrs</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Netflix Games Pulse Micro-panel -->
+<div class="bg-surface-container-low p-gutter rounded-xl shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">sports_esports</span>
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Métricas Gaming Cloud &amp; Mobile</span>
+</div>
+<span class="font-badge-spec text-badge-spec bg-tertiary-container/30 text-tertiary px-2 py-0.5 rounded uppercase">Alta Demanda</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-body-sm text-body-sm text-outline">Instalaciones App</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5">24.2M</span>
+<span class="text-secondary font-label-sm text-label-sm flex items-center gap-0.5 mt-1">
+<span class="material-symbols-outlined text-[14px]">north_east</span> +18.4%
+            </span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-body-sm text-body-sm text-outline">Cloud Streaming Hrs</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5">14.6M</span>
+<span class="text-tertiary font-label-sm text-label-sm flex items-center gap-0.5 mt-1">
+<span class="material-symbols-outlined text-[14px]">devices</span> Latencia: 18ms
+            </span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-outline font-body-sm text-body-sm">
+<span>Top títulos: GTA San Andreas, Hades, Stranger Things: 1984</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Content Management Section ("Gestión Rápida de Catálogo") -->
+<div class="flex flex-col bg-surface-container-low rounded-xl shadow-xl overflow-hidden">
+<!-- Header with Tabs and New Title Action -->
+<div class="p-gutter flex flex-col lg:flex-row lg:items-center justify-between gap-gutter bg-surface-container">
+<div class="flex flex-col gap-1">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Gestión de Catálogo Multimedia</span>
+<span class="font-body-sm text-body-sm text-outline">Monitoreo de estado de publicación, métricas de ciclo de vida y edición de metadatos.</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Filter Tabs -->
+<div class="flex items-center bg-surface-container-lowest p-1 rounded-lg">
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md bg-surface-container text-on-surface font-semibold shadow-sm transition-colors" id="tab-all" onclick="filterCatalog('all')">
+            Todos (14,820)
+          </button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors" id="tab-movies" onclick="filterCatalog('movies')">
+            Películas (6,240)
+          </button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors" id="tab-series" onclick="filterCatalog('series')">
+            Series (4,890)
+          </button>
+<button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors" id="tab-games" onclick="filterCatalog('games')">
+            Videojuegos (420)
+          </button>
+</div>
+<!-- Add Button -->
+<button class="flex items-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary-container px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Registrar nuevo título / juego</span>
+</button>
+</div>
+</div>
+<!-- Table Component -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/60 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-md px-gutter">Título y Portada</th>
+<th class="py-space-md px-space-md">Tipo / Formato</th>
+<th class="py-space-md px-space-md">Género</th>
+<th class="py-space-md px-space-md text-center">Clasificación</th>
+<th class="py-space-md px-space-md text-right">Visionado 30d</th>
+<th class="py-space-md px-space-md text-center">Estado</th>
+<th class="py-space-md px-gutter text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-md text-body-md" id="catalog-table-body">
+<!-- Row 1: Series -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="series">
+<td class="py-space-md px-gutter">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-10 object-cover rounded shadow-md group-hover:scale-105 transition-transform" data-alt="Cyber Chronicles Neo-Tokyo cinematic horizontal poster art, glowing red and cyan holographic city skyscrapers, futuristic dark anime cyberpunk atmosphere, highly detailed high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCWzoGEh6ZP7K4lsCqQlz8jGaOxJ4G-G-RrrtFHt6WMCMuHZtY5WvA8A4f6sP22b0048auLHVh951gU9Ez9DAji2O7cCDovXn12EaUccREfo9L0QETCO10RdF_E8UiPWKiSZMHrh_S-BCZuF1MrCX3bM9u8uvdL-wWX9yGh2Lj7CS6NbM_bXeiTIDj-5HGD2ZtN1ba50Hjyk1EhoWHGswUoJvftUBqsPOKK9LDChOil-EpYqZ4DVVf"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate group-hover:text-primary transition-colors">Cyber Chronicles: Neo-Tokyo</span>
+<span class="font-body-sm text-body-sm text-outline truncate">Temporada 2 • 8 Episodios • 4K HDR Atmos</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface bg-surface-container-high px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">tv</span> Serie Original
+              </span>
+</td>
+<td class="py-space-md px-space-md text-on-surface">Ciencia Ficción / Anime</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-badge-spec text-badge-spec px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">16+</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface font-bold">98.4M hrs</span>
+<span class="font-badge-spec text-badge-spec text-secondary">+22% estreno</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Publicado</span>
+</span>
+</td>
+<td class="py-space-md px-gutter text-right">
+<div class="flex items-center justify-end gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Editar Metadatos">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Ver Analíticas">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-error transition-colors" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Series -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="series">
+<td class="py-space-md px-gutter">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-10 object-cover rounded shadow-md group-hover:scale-105 transition-transform" data-alt="Stranger Mysteries Season 4 vintage 80s dark retro poster, eerie foggy forest with red storm clouds in the sky, moody nostalgic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF9pFJY6ZyvcCBXf-q8gtXVHp_i-Ru8OeaTXJEIg8AMmgrm2n-o7BsGBsQvsN5nOgkEGLelnhdLQxXR3ysBxq_1JV8s8bZdCduT-sV4Yx30gEarIZILXF0A2H5ylKgS1FWVVXPnTfAUBWXOn3xM96ZD6V2C6hWYrd4cFqMZHREYUP9UmuFYQ1iDj1DqWLXFqDs1iMi3B5ehYRn2SY9u3ulurMpMgzHpP_CjRu1V48-UH3uaVMcNZ1B"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate group-hover:text-primary transition-colors">Stranger Mysteries: Temporada 4</span>
+<span class="font-body-sm text-body-sm text-outline truncate">Temporada Completa • 9 Episodios</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface bg-surface-container-high px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">tv</span> Serie
+              </span>
+</td>
+<td class="py-space-md px-space-md text-on-surface">Misterio / Sobrenatural</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-badge-spec text-badge-spec px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">16+</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface font-bold">84.1M hrs</span>
+<span class="font-badge-spec text-badge-spec text-outline">Estable</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Publicado</span>
+</span>
+</td>
+<td class="py-space-md px-gutter text-right">
+<div class="flex items-center justify-end gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Editar Metadatos">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Ver Analíticas">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-error transition-colors" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Movies -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="movies">
+<td class="py-space-md px-gutter">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-10 object-cover rounded shadow-md group-hover:scale-105 transition-transform" data-alt="Shadow of Mayfair dark Victorian London thriller film still, cobblestone street shrouded in mist with gas lamps casting golden amber reflection on wet ground, cinematic 4K look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmmYVFCXn13XOPpuL55jqkKyw4fjpZzSdJeyxBizglIjxWVabQA0qq4i5QY5rMEsDpvQTKWWhdoQ4OfgROv60phQaxTiXc_3M-Ma6x4rDwMLOR7kWbrvRPX6P41o-lx3LZs7xPz65pUHzTVZgj2UIgcMqu7lrKRlX1X9NwVN-0CspKGohNNeTC0liQhALfZkOh_FcFKBbomfYlOWf8IRMhSMvF_YAMDwvTqRcr3kmWlVoke0MEIGB8"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate group-hover:text-primary transition-colors">Shadow of Mayfair</span>
+<span class="font-body-sm text-body-sm text-outline truncate">2h 14m • Dolby Vision • 4K UHD</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary-fixed bg-surface-container-high px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">movie</span> Película
+              </span>
+</td>
+<td class="py-space-md px-space-md text-on-surface">Thriller / Drama Histórico</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-badge-spec text-badge-spec px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">18+</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface font-bold">62.3M hrs</span>
+<span class="font-badge-spec text-badge-spec text-secondary">+15.4%</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Publicado</span>
+</span>
+</td>
+<td class="py-space-md px-gutter text-right">
+<div class="flex items-center justify-end gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Editar Metadatos">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Ver Analíticas">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-error transition-colors" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Games -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="games">
+<td class="py-space-md px-gutter">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-10 object-cover rounded shadow-md group-hover:scale-105 transition-transform" data-alt="Hades Nether Realm isometric roguelike video game action artwork, burning underworld flames, hand-drawn comic Greek mythology styling, intense saturated orange and purple hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA02jPb-8H-FkFnZeAvH4LKCRNgA79mT-wZWQU0oqCeecG-Ch6jDYZXIcA04b4BFx28A5FJhM1TECI5YFXy4XGDp_hwnx8DCg9js90OUTDzA09kGBGLEdClXhcC7deQvp-tz3PQ6QetivsF7hIWL5RPwgwKNaqUiou6swTXZS2451G0NP730pXO3fc7oiAkSPBmD4mo2PiBYMI7ZuHb1-OtBFmPoFxWj35Qz64KJq255qH34PFjT96p"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate group-hover:text-primary transition-colors">Hades: Nether Realm</span>
+<span class="font-body-sm text-body-sm text-outline truncate">Netflix Cloud Gaming • Controller Support</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container-high px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">sports_esports</span> Videojuego
+              </span>
+</td>
+<td class="py-space-md px-space-md text-on-surface">Roguelike / Acción</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-badge-spec text-badge-spec px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">12+</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-tertiary font-bold">4.2M sesiones</span>
+<span class="font-badge-spec text-badge-spec text-outline">18.2M hrs jugadas</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Publicado</span>
+</span>
+</td>
+<td class="py-space-md px-gutter text-right">
+<div class="flex items-center justify-end gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Editar Metadatos">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Ver Analíticas">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-error transition-colors" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Games -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="games">
+<td class="py-space-md px-gutter">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-10 object-cover rounded shadow-md group-hover:scale-105 transition-transform" data-alt="GTA San Andreas Definitive Edition open world video game scene, Los Santos palm trees with sunset orange sky and lowrider vehicle parked, stylized game screenshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASFxyx-dslXsfregNPtelOsaXVoFrv5AxWEaYWAu6hP26j6Sc4-LH3WaA6b-bxrDHj7MR4fvjzoejQwMPRziZrfR6sf27Ooe_Wxqk6tAVhNP6gu8RMS23ZtRk5YRwjOYtafnZUKAGlPvEyB_jQZ84U5t5b5HpJkRa5OLwCix8PK5wnDfWg0bEMjKAG25MJEollc6cbAbTwwiITQR_BfRHxO_jhXWV3q_OhN6EYGXZDB2BVKeVDzzoJ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate group-hover:text-primary transition-colors">GTA: San Andreas Definitive</span>
+<span class="font-body-sm text-body-sm text-outline truncate">Mobile / Tablet • Rockstar Games</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container-high px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">sports_esports</span> Videojuego
+              </span>
+</td>
+<td class="py-space-md px-space-md text-on-surface">Mundo Abierto</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-badge-spec text-badge-spec px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">18+</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-tertiary font-bold">7.8M sesiones</span>
+<span class="font-badge-spec text-badge-spec text-secondary">+34% Móvil</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Publicado</span>
+</span>
+</td>
+<td class="py-space-md px-gutter text-right">
+<div class="flex items-center justify-end gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Editar Metadatos">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Ver Analíticas">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-error transition-colors" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Movies -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="movies">
+<td class="py-space-md px-gutter">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-10 object-cover rounded shadow-md group-hover:scale-105 transition-transform" data-alt="Ecos del Vacio deep space sci-fi movie key art, lone astronaut gazing into massive celestial cosmic anomaly vortex with deep crimson and obsidian dark matter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPvLjUA9rS1wiVMZM7VH90-J2LkZdQ4giXLXISMabTg8ENNB833y3rQxHZ711Wc4dH7M-B7EJoLGOrRD-6G7VocvreIHNbBYKnaDPzUQoi0updRD2cda_ylXOcysbrB_1hgnre3-9ISHUDi_EMIq2kl2b-trybu0Ascn08kAj3ox2bApxIosNZrYlv-EsMhUwThFqAG_LCVxR6V-5nL8sHvk4GL5RmX4YeD7nh2DpHpYAvTRjiBQqv"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate group-hover:text-primary transition-colors">Ecos del Vacío</span>
+<span class="font-body-sm text-body-sm text-outline truncate">1h 58m • IMAX Enhanced Audio</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary-fixed bg-surface-container-high px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">movie</span> Película
+              </span>
+</td>
+<td class="py-space-md px-space-md text-on-surface">Ciencia Ficción / Espacio</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-badge-spec text-badge-spec px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">13+</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface font-bold">45.9M hrs</span>
+<span class="font-badge-spec text-badge-spec text-secondary">+8.7%</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Publicado</span>
+</span>
+</td>
+<td class="py-space-md px-gutter text-right">
+<div class="flex items-center justify-end gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Editar Metadatos">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-on-surface transition-colors" title="Ver Analíticas">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-error transition-colors" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Items Count Controls -->
+<div class="p-gutter-sm bg-surface-container-high/40 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md text-outline font-body-sm text-body-sm">
+<span>Mostrando <strong class="text-on-surface">1-6</strong> de 14,820 registros</span>
+<div class="flex items-center gap-1">
+<span>Filas por página:</span>
+<select class="bg-surface-container text-on-surface px-2 py-1 rounded outline-none cursor-pointer">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-sm">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors">2</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors">3</button>
+<span class="px-1 text-outline font-body-sm text-body-sm">...</span>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors">247</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- System Health & CDN Edge Nodes -->
+<div class="bg-surface-container-low p-gutter rounded-xl shadow-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">dns</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Estado de Nodos Edge CDN y Cloud Servers</span>
+<span class="font-body-sm text-body-sm text-outline">Latencia media global de entrega de paquetes: 12ms • 0 Incidentes reportados en 24h</span>
+</div>
+</div>
+<!-- Regional Nodes Status Indicator Badges -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Node NA -->
+<div class="flex items-center gap-1.5 bg-surface-container px-space-sm py-1 rounded-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">EE.UU. (Virginia)</span>
+<span class="font-badge-spec text-badge-spec text-outline">9ms</span>
+</div>
+<!-- Node EU -->
+<div class="flex items-center gap-1.5 bg-surface-container px-space-sm py-1 rounded-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Europa (Frankfurt)</span>
+<span class="font-badge-spec text-badge-spec text-outline">11ms</span>
+</div>
+<!-- Node LATAM -->
+<div class="flex items-center gap-1.5 bg-surface-container px-space-sm py-1 rounded-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">LATAM (São Paulo)</span>
+<span class="font-badge-spec text-badge-spec text-outline">16ms</span>
+</div>
+<!-- Node APAC -->
+<div class="flex items-center gap-1.5 bg-surface-container px-space-sm py-1 rounded-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">APAC (Tokio)</span>
+<span class="font-badge-spec text-badge-spec text-outline">13ms</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function setActiveRange(range) {
+    const btn24h = document.getElementById('range-24h');
+    const btn7d = document.getElementById('range-7d');
+    const btn30d = document.getElementById('range-30d');
+    
+    [btn24h, btn7d, btn30d].forEach(btn => {
+      btn.className = "px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors";
+    });
+
+    const target = range === '24h' ? btn24h : (range === '7d' ? btn7d : btn30d);
+    target.className = "px-space-sm py-1.5 rounded font-label-md text-label-md bg-surface-container-highest text-on-surface shadow-sm";
+  }
+
+  function filterCatalog(category) {
+    const tabs = ['all', 'movies', 'series', 'games'];
+    tabs.forEach(tab => {
+      const el = document.getElementById('tab-' + tab);
+      if (tab === category) {
+        el.className = "px-space-sm py-1.5 rounded font-label-md text-label-md bg-surface-container text-on-surface font-semibold shadow-sm transition-colors";
+      } else {
+        el.className = "px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors";
+      }
+    });
+
+    const rows = document.querySelectorAll('#catalog-table-body tr');
+    rows.forEach(row => {
+      const rowCat = row.getAttribute('data-category');
+      if (category === 'all' || rowCat === category) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+</script></main></div></body></html>

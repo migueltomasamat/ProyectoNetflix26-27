@@ -7,8 +7,15 @@ use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
 
+$router->get('/', function () {
+    include_once "app/Views/frontend/frontend.index.php";
+});
+$router->get('/series',function(){
+    include_once "app/Views/frontend/frontend.series.php";
+});
+
 $router->get('/admin', function(){
-    return 'Estas intentando acceder a la funcion de admin';
+    include_once "app/Views/backend/code.html";
 });
 
 $router->get('/get-uuid', function(){

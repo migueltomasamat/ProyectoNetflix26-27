@@ -7,6 +7,8 @@ use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
 
+//Rutas del Frontend
+
 $router->get('/', function () {
     include_once "app/Views/frontend/frontend.index.php";
 });
@@ -14,13 +16,29 @@ $router->get('/series',function(){
     include_once "app/Views/frontend/frontend.series.php";
 });
 
+
+//Rutas del backend
 $router->get('/admin', function(){
     include_once "app/Views/backend/code.html";
 });
 
+
+//Rutas de ejemplos
+
 $router->get('/get-uuid', function(){
     return \Ramsey\Uuid\Uuid::uuid4()->toString();
 });
+
+$router->get('/obtener-pass',function(){
+    include_once "ejemplos/funciones.php";
+    echo create_pass();
+});
+
+
+
+
+
+
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 

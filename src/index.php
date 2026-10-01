@@ -34,6 +34,16 @@ $router->get('/obtener-pass',function(){
     echo create_pass();
 });
 
+$router->get('/movie/add',function(){
+    include_once "app/Views/backend/admin.movie.new.php";
+});
+$router->post('/movie',function(){
+   //Que hacemos con los datos de la pelicula
+
+    var_dump($_POST);
+    var_dump($_FILES);
+});
+
 
 
 

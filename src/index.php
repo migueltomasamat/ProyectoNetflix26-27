@@ -19,8 +19,15 @@ $router->get('/series',function(){
 
 //Rutas del backend
 $router->get('/admin', function(){
-    include_once "app/Views/backend/code.html";
+    $title = "Admin Principal";
+    include_once "app/Views/backend/admin.index.php";
 });
+
+$router->get('/admin/peliculas', function(){
+    $title = "Admin Peliculas";
+    include_once "app/Views/backend/admin.index.php";
+});
+
 
 
 //Rutas de ejemplos
@@ -35,13 +42,13 @@ $router->get('/obtener-pass',function(){
 });
 
 $router->get('/movie/add',function(){
-    include_once "app/Views/backend/admin.movie.new.php";
+    include_once "app/Views/backend/admin.movie.add.php";
 });
 $router->post('/movie',function(){
    //Que hacemos con los datos de la pelicula
 
     var_dump($_POST);
-    var_dump($_FILES);
+    manageFiles($_FILES);
 });
 
 

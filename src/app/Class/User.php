@@ -2,7 +2,7 @@
 
 namespace Matomas\Proyecto1\Class;
 
-class User
+class User implements \JsonSerializable
 {
     //Propiedades
     private int $id;
@@ -107,7 +107,8 @@ class User
     }
 
 
-
-
-
+    public function jsonSerialize(): mixed
+    {
+        // TODO: Implement jsonSerialize() method.
+    }
 }

@@ -4,10 +4,31 @@
 
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
+use Matomas\Proyecto1\Controllers\UserController;
+use Matomas\Proyecto1\Controllers\PeliculaController;
 
 $router = new RouteCollector();
 
-//Rutas del Frontend
+
+//Rutas de usuario
+$router->get('/register',[UserController::class,'create']);
+$router->get('/user/{id}/edit',[UserController::class,'edit']);
+$router->get('/user',[UserController::class,'index']);
+$router->get('/user/{id}',[UserController::class,'show']);
+$router->post('/user',[UserController::class,'store']);
+$router->put('/user/{id}',[UserController::class,'update']);
+$router->delete('/user/{id}',[UserController::class,'destroy']);
+
+
+
+
+
+
+
+
+
+
+//Rutas de Ejemplo
 
 $router->get('/', function () {
     include_once "app/Views/frontend/frontend.index.php";

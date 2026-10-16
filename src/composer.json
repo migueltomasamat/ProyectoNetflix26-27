@@ -16,6 +16,7 @@
     "minimum-stability": "stable",
     "require": {
         "phroute/phroute": "^2.2",
-        "ramsey/uuid": "^4.9.4"
+        "ramsey/uuid": "^4.9.4",
+        "ext-pdo": "*"
     }
 }

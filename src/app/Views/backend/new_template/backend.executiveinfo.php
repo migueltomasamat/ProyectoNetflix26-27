@@ -8,7 +8,7 @@
                     <span>Métricas En Vivo • Servidor Principal Frankfurt</span>
                 </div>
                 <h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
-                    Panel de Gestión de Contenidos y Métricas de Audiencia
+                    <?=$titulo??'Vista general'?>
                 </h1>
                 <p class="font-body-md text-body-md text-outline">
                     Supervisión en tiempo real de reproducciones, retención y catálogo multimedia global con

@@ -2,6 +2,7 @@
 
 namespace Matomas\Proyecto1\Models;
 
+use Matomas\Proyecto1\Class\User;
 use PDO;
 use PDOException;
 
@@ -27,11 +28,9 @@ class UserModel
 
         $stmt->execute();
 
-        $resultado=$stmt->fetchAll();
+        $resultado=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        var_dump($resultado);
-
-        return [];
+        return User::createMultipleUsersFromArray($resultado);
     }
 
 }

@@ -15,15 +15,18 @@ class UserController implements ControllerInterface
 
         $usuarios=UserModel::getUsers();
 
+
         //Tengo que crear una vista donde se muestre una
         // tabla con todos los usuarios
-        //include_once "";
+        $titulo = "Gestión de usuarios";
+        include_once "app/Views/backend/admin.users.index.php";
 
     }
 
     public function show(int $id)
     {
-        return "Me estas pidiendo los datos del usuario $id";
+        $titulo = "Datos del usuario $id";
+        include_once "app/Views/backend/admin.users.show.php";
     }
 
     public function create()

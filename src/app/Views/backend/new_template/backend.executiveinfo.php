@@ -11,7 +11,7 @@
                     <?=$titulo??'Vista general'?>
                 </h1>
                 <p class="font-body-md text-body-md text-outline">
-                    <?=$descripcion?>
+                    <?=$descripcion??'Panel de control de Netflix, gestiones más comunes'?>
                 </p>
             </div>
             <!-- Executive Controls -->

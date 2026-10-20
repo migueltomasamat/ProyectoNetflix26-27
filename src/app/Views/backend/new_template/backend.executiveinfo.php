@@ -5,22 +5,18 @@
             <div class="flex flex-col gap-space-xs max-w-3xl">
                 <div class="flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm uppercase tracking-widest">
                     <span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
-                    <span>Métricas En Vivo • Servidor Principal Frankfurt</span>
+                    <span>Métricas En Vivo • Servidor Principal</span>
                 </div>
                 <h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
                     <?=$titulo??'Vista general'?>
                 </h1>
                 <p class="font-body-md text-body-md text-outline">
-                    Supervisión en tiempo real de reproducciones, retención y catálogo multimedia global con
-                    telemetría integrada de cloud streaming.
+                    <?=$descripcion?>
                 </p>
             </div>
             <!-- Executive Controls -->
             <div class="flex flex-wrap items-center gap-space-sm">
                 <div class="relative flex items-center bg-surface-container rounded-lg p-1">
-                    <button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors"
-                            id="range-24h" onclick="setActiveRange('24h')">Tiempo real 24h
-                    </button>
                     <button class="px-space-sm py-1.5 rounded font-label-md text-label-md text-outline hover:text-on-surface transition-colors"
                             id="range-7d" onclick="setActiveRange('7d')">Esta semana
                     </button>

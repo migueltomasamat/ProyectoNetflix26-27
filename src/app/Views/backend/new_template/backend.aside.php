@@ -6,10 +6,10 @@
 - Mode: dark
 - Roundness: rounded-sm
 " class="h-8 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1XLhNpsIMY35a2KQfccx7RL5riMbi-q3TA-idNp3pM4Idznv9R8CNdMIretQHqsGnPsc3MbGwacAqHYs5CkMy4ksqippC2xXPF2NiDjCCLgao-eZ1ruKv7RvMDQBNukYCZogc5z9mxG8c7df8vbPkw_2PQu9j4sD9Z3yumBun8myxJkwJoIKvsCf_Ggh9O6pESWXJJJrL0lQ5hIWFzafa862Chhe5TjGlXOzO1A5cn3qqSO6JtBh18rCiE"/>
+                src="app/Views/backend/img/netflix-logo.png"/>
             <div class="flex flex-col"><span
                     class="font-label-md text-label-md text-on-surface tracking-tight uppercase">Netflix Studio</span><span
-                    class="font-label-sm text-label-sm text-outline tracking-wider uppercase">CMS Control Center</span>
+                    class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Control Center</span>
             </div>
         </div>
         <nav class="px-gutter-sm py-space-sm flex flex-col gap-space-md"
@@ -32,30 +32,15 @@
                     data-path="estrenos-programados" href="#"><span class="material-symbols-outlined text-[18px]">schedule</span><span>Estrenos programados</span></a>
             </div>
             <div class="flex flex-col gap-space-xs"><span
-                    class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Analíticas y Audiencia</span><a
+                    class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Gestión de Usuarios</span><a
                     aria-current="page"
                     class="flex items-center gap-space-sm px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary-container font-label-md rounded-lg"
-                    data-path="estadisticas-de-visionado" href="#"><span class="material-symbols-outlined text-[18px]">insights</span><span>Estadísticas de visionado</span></a><a
-                    class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="retencion-y-horas-vistas" href="#"><span class="material-symbols-outlined text-[18px]">timelapse</span><span>Retención y Horas vistas</span></a><a
-                    class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="metricas-de-videojuegos" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>Métricas de videojuegos</span></a>
-            </div>
-            <div class="flex flex-col gap-space-xs"><span
-                    class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Moderación y Licencias</span><a
-                    class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="clasificaciones-de-edad" href="#"><span class="material-symbols-outlined text-[18px]">verified_user</span><span>Clasificaciones de edad</span></a><a
-                    class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="derechos-y-drm" href="#"><span
-                        class="material-symbols-outlined text-[18px]">lock</span><span>Derechos &amp; DRM</span></a><a
-                    class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="localizacion-e-idiomas" href="#"><span class="material-symbols-outlined text-[18px]">translate</span><span>Localización e idiomas</span></a>
+                    data-path="estadisticas-de-visionado" href="/user"><span class="material-symbols-outlined text-[18px]">insights</span><span>Gestión integral de usuarios</span></a>
             </div>
             <div class="flex flex-col gap-space-xs"><span
                     class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Configuración</span><a
                     class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="gestion-de-usuarios-del-cms" href="#"><span
-                        class="material-symbols-outlined text-[18px]">group</span><span>Gestión de usuarios del CMS</span></a><a
+                    data-path="gestion-de-usuarios-del-cms" href="#"><a
                     class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
                     data-path="parametros-del-servidor" href="#"><span
                         class="material-symbols-outlined text-[18px]">dns</span><span>Parámetros del servidor</span></a><a

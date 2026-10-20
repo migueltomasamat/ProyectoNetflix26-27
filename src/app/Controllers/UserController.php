@@ -19,6 +19,7 @@ class UserController implements ControllerInterface
         //Tengo que crear una vista donde se muestre una
         // tabla con todos los usuarios
         $titulo = "Gestión de usuarios";
+        $descripcion = "Usuarios resgistrados en el sistema";
         include_once "app/Views/backend/admin.users.index.php";
 
     }

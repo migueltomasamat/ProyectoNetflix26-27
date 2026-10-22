@@ -17,6 +17,7 @@
     "require": {
         "phroute/phroute": "^2.2",
         "ramsey/uuid": "^4.9.4",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "respect/validation": "^2.5"
     }
 }

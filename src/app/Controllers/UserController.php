@@ -5,8 +5,7 @@ namespace Matomas\Proyecto1\Controllers;
 use Matomas\Proyecto1\Class\User;
 use Matomas\Proyecto1\Interfaces\ControllerInterface;
 use Matomas\Proyecto1\Models\UserModel;
-use Respect\Validation\Exceptions\NestedValidationException;
-use Respect\Validation\Validator as v;
+
 
 class UserController implements ControllerInterface
 {
@@ -48,27 +47,29 @@ class UserController implements ControllerInterface
     public function store()
     {
 
-        //Recibir los datos que me llegan por la función POST
-        var_dump($_POST);
-
         //validar los datos que me han llegado
-        try{
-            v::key('name',v::stringType())->
-            key('address',v::stringType(),false)->
-            key('phone',v::stringType()->length(9,9),false)->
-            key('birthdate',v::date('Y-m-d'),false)->
-            key('password',v::stringType()->length(2,25))->
-            key('email',v::email())->assert($_POST);
-        }catch (NestedValidationException $e){
-            $errores = $e->getMessages();
-            foreach ($errores as $error){
+        $validacion=User::validateUserCreation($_POST);
+
+        if($validacion===true){
+            //El usuario ha sido validado correctamente
+
+            $usuario = User::createFromArray($_POST);
+
+            //Enviar al modelo la instancia del objeto que debe guardar en la BD
+            if (!UserModel::saveUser($usuario)){
+                return "Ha ocurrido un  error de almacenamiento";
+            }else{
+                return "Se ha guardado";
+            }
+        }else{
+            //Ha habido errores de validación
+            foreach ($validacion as $error){
                 echo $error;
             }
         }
 
-        $usuario = User::createFromArray($_POST);
 
-        var_dump($usuario);
+
 
 
 
@@ -81,6 +82,27 @@ class UserController implements ControllerInterface
 
     public function destroy(int $id)
     {
-        return "Borrar usuario $id";
+
+        if(UserModel::deleteUser($id)){
+            //Si se ha borrado correctamente
+            http_response_code(200);
+            header('Content-Type: application/json');
+            return json_encode([
+                "error"=>false,
+                "message"=>"Usuario eliminado correctamente",
+                "code"=>200
+            ]);
+
+        }else{
+            //Si ha ocurrido algun fallo
+            http_response_code(404);
+            header('Content-Type: application/json');
+            return json_encode([
+                "error"=>true,
+                "message"=>"No se ha podido eliminar el usuario",
+                "code"=>404
+            ]);
+        }
+
     }
 }

@@ -18,6 +18,7 @@
         "phroute/phroute": "^2.2",
         "ramsey/uuid": "^4.9.4",
         "ext-pdo": "*",
-        "respect/validation": "^2.5"
+        "respect/validation": "^2.5",
+        "vlucas/phpdotenv": "^5.7"
     }
 }

@@ -7,6 +7,11 @@ use Phroute\Phroute\RouteCollector;
 use Matomas\Proyecto1\Controllers\UserController;
 use Matomas\Proyecto1\Controllers\PeliculaController;
 
+//Herramienta para cargar las variables de entorno
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
 $router = new RouteCollector();
 
 

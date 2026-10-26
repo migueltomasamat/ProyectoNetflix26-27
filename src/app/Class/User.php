@@ -183,4 +183,49 @@ class User implements \JsonSerializable
         return true;
 
     }
+
+    public static function validateUserUpdate(array $userData):array|true{
+
+        try{
+            v::key('name',v::stringType(),false)->
+            key('address',v::stringType(),false)->
+            key('phone',v::stringType()->length(9,9),false)->
+            key('birthdate',v::date('Y-m-d'),false)->
+            key('password',v::stringType()->length(2,25),false)->
+            key('email',v::email(),false)->
+            key('id',v::intType())->assert($userData);
+        }catch (NestedValidationException $e){
+            $errores = $e->getMessages();
+            return $errores;
+        }
+        return true;
+
+    }
+
+    public static function updateFromArray
+    (User $usuarioAntiguo,array $datosNuevos):User{
+
+        $usuarioAntiguo->setAddress(
+            $datosNuevos['address']??$usuarioAntiguo->getAddress());
+        $usuarioAntiguo->setPhone($datosNuevos['phone']??$usuarioAntiguo->getPhone());
+        $usuarioAntiguo->setEmail($datosNuevos['email']??$usuarioAntiguo->getEmail());
+        $usuarioAntiguo->setName($datosNuevos['name']??$usuarioAntiguo->getName());
+
+        //Comprobar que existe la etiqueta password
+        if (isset($datosNuevos['password'])){
+            $passwordCifrado = password_hash($datosNuevos['password'],
+                PASSWORD_DEFAULT);
+            $usuarioAntiguo->setPassword($passwordCifrado);
+        }
+
+        //Comprobar que existe la etiqueta de birthdate
+
+        if (isset($datosNuevos['birthdate'])){
+            $usuarioAntiguo->setBirthdate(
+                \DateTime::createFromFormat('Y-m-d',$datosNuevos['birthdate']));
+        }
+
+        return $usuarioAntiguo;
+
+    }
 }

@@ -34,7 +34,9 @@ class UserController implements ControllerInterface
 
     public function create()
     {
-        // TODO: Implement create() method.
+        $titulo = "Creación de un nuevo usuario";
+        $descripcion = "Inserta todos los datos del formulario para crear un usuario";
+        include_once "app/Views/backend/admin.users.create.php";
     }
 
     public function update(int $id)
@@ -85,7 +87,7 @@ class UserController implements ControllerInterface
             if (!UserModel::saveUser($usuario)){
                 return "Ha ocurrido un  error de almacenamiento";
             }else{
-                return "Se ha guardado";
+                header("Location: /user");
             }
         }else{
             //Ha habido errores de validación
@@ -94,16 +96,16 @@ class UserController implements ControllerInterface
             }
         }
 
-
-
-
-
-
     }
 
     public function edit(int $id)
     {
-        // TODO: Implement edit() method.
+        //Necesito recuperar el usuario de la base de datos
+        $usuario = UserModel::getUserById($id);
+
+        //Voy a incluir la vista de edición de datos
+        include_once "app/Views/backend/admin.users.edit.php";
+
     }
 
     public function destroy(int $id)

@@ -30,10 +30,10 @@
                     </button>
                 </div>
                 <!-- Add Button -->
-                <button class="flex items-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary-container px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shadow-md active:scale-95">
+                <a href="/user/create"><button class="flex items-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary-container px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shadow-md active:scale-95">
                     <span class="material-symbols-outlined text-[18px]">add_box</span>
                     <span>+ Registrar nuevo usuario</span>
-                </button>
+                    </button></a>
             </div>
         </div>
         <!-- Table Component -->
@@ -74,7 +74,7 @@
 
                             <button class="p-1.5 hover:bg-surface-container-high rounded text-outline hover:text-error transition-colors" onclick="borrar()"
                                     title="Borrar">
-                                <span class="material-symbols-outlined text-[18px]">delete</span>
+                                <span class="material-symbols-outlined text-[18px]" onclick="borrar()">delete</span>
                             </button>
                         </div>
                     </td>
@@ -124,9 +124,17 @@
     <script>
 
         function borrar(){
+            const requestOptions = {
+                method: "DELETE",
+                redirect: "follow"
+            }
 
+            fetch("http://localhost:8080/user/<?=$usuario->getId()?>",requestOptions)
+                .then((response)=>response.text())
+                .then((result)=>window.location.replace("http://localhost:8080/user"))
+                .catch((error)=>console.error(error));
 
-        }
+            }
 
     </script>
 

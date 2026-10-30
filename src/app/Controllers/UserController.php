@@ -133,4 +133,38 @@ class UserController implements ControllerInterface
         }
 
     }
+
+    public function login(){
+        //Muestra el formulario para poder hacer login
+        include_once "app/Views/frontend/login.html";
+    }
+
+    public function signin(){
+
+        //Valida el usuario
+        $usuario = UserModel::getUserByEmail($_POST['email']);
+        if ($usuario){
+            //Guarda en la sesión los datos necesarios para almacenar el usuario
+            if (password_verify($_POST['password'],$usuario->getPassword())){
+                //La contraseña ha sido verificada
+
+                $_SESSION['user']=$usuario;
+                header('Location: /user');
+
+            }else{
+                return "La contraseña es incorrecta";
+            }
+
+
+        }else{
+            return "No se ha podido encontrar el usuario";
+        }
+
+
+    }
+
+    public function logout(){
+        session_destroy();
+        header('Location: /');
+    }
 }

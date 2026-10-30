@@ -54,7 +54,7 @@
             <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
                     class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
             <div class="flex flex-col"><span
-                    class="font-label-md text-label-md text-on-surface truncate">Carlos Mendoza</span><span
+                    class="font-label-md text-label-md text-on-surface truncate"><?=$_SESSION['user']->getName()?></span><span
                     class="font-body-sm text-body-sm text-outline">Admin General</span></div>
         </div>
         <div class="flex items-center gap-space-xs bg-surface-container-highest px-space-xs py-[2px] rounded"><span

@@ -178,4 +178,39 @@ class UserModel
 
     }
 
+    public static function getUserByEmail(string $emailUser):User|false{
+
+        $conexion = "";
+        try{
+
+            $conexion = new PDO("mysql:host=mariadb;dbname=netflix",
+                "miguel","leugim");
+            $conexion->setAttribute(PDO::ATTR_ERRMODE,
+                PDO::ERRMODE_EXCEPTION);
+
+
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+
+        $sql="SELECT * FROM users where email=:email";
+        $stmt = $conexion->prepare($sql);
+
+        $stmt->bindValue("email",$emailUser);
+
+        $stmt->execute();
+
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultado){
+            return User::createFromArray($resultado);
+        }else{
+            return false;
+        }
+
+
+
+    }
+
 }

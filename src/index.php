@@ -7,6 +7,7 @@ use Phroute\Phroute\RouteCollector;
 use Matomas\Proyecto1\Controllers\UserController;
 use Matomas\Proyecto1\Controllers\PeliculaController;
 
+session_start();
 //Herramienta para cargar las variables de entorno
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -14,16 +15,29 @@ $dotenv->load();
 
 $router = new RouteCollector();
 
+//Filtro para controlar si se puede entrar o no
+$router->filter('auth', function(){
+    if(!isset($_SESSION['user']))
+    {
+        header('Location: /login');
+
+        return false;
+    }
+});
+
 
 //Rutas de usuario
-$router->get('/user/create',[UserController::class,'create']);
-$router->get('/user/{id}/edit',[UserController::class,'edit']);
-$router->get('/user',[UserController::class,'index']);
+$router->get('/user/create',[UserController::class,'create'],['before' => 'auth']);
+$router->get('/user/{id}/edit',[UserController::class,'edit'],['before' => 'auth']);
+$router->get('/user',[UserController::class,'index'],['before' => 'auth']);
 $router->get('/user/{id}',[UserController::class,'show']);
 $router->post('/user',[UserController::class,'store']);
 $router->put('/user/{id}',[UserController::class,'update']);
 $router->delete('/user/{id}',[UserController::class,'destroy']);
 
+$router->get('/login',[UserController::class,'login']);
+$router->post('/signin',[UserController::class,'signin']);
+$router->get('/logout',[UserController::class,'logout']);
 
 
 

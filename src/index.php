@@ -35,9 +35,23 @@ $router->post('/user',[UserController::class,'store']);
 $router->put('/user/{id}',[UserController::class,'update']);
 $router->delete('/user/{id}',[UserController::class,'destroy']);
 
+
+//Rutas de login
 $router->get('/login',[UserController::class,'login']);
 $router->post('/signin',[UserController::class,'signin']);
 $router->get('/logout',[UserController::class,'logout']);
+
+
+//Rutas de API
+$router->get('/api/user',[UserController::class,'index']);
+$router->get('/api/user/{id}',[UserController::class,'show']);
+$router->post('/api/user',[UserController::class,'store']);
+$router->put('/api/user/{id}',[UserController::class,'update']);
+$router->delete('/api/user/{id}',[UserController::class,'destroy']);
+
+$router->get('/error',function(){
+    include_once "app/Views/error.php";
+});
 
 
 

@@ -121,14 +121,30 @@
                             "letterSpacing": "-0.01em",
                             "fontWeight": "700"
                         }],
-                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {
+                            "lineHeight": "32px",
+                            "letterSpacing": "-0.015em",
+                            "fontWeight": "700"
+                        }],
                         "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
                         "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
                         "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
-                        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["20px", {
+                            "lineHeight": "28px",
+                            "letterSpacing": "-0.01em",
+                            "fontWeight": "700"
+                        }],
+                        "headline-xl": ["36px", {
+                            "lineHeight": "44px",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "800"
+                        }],
                         "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                        "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                        "display-hero": ["56px", {
+                            "lineHeight": "64px",
+                            "letterSpacing": "-0.03em",
+                            "fontWeight": "900"
+                        }],
                         "display-hero-mobile": ["32px", {
                             "lineHeight": "38px",
                             "letterSpacing": "-0.02em",
@@ -145,25 +161,26 @@
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-b from-surface-container-lowest/90 via-surface-container-lowest/60 to-transparent backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
     <div class="h-16 w-full px-margin-mobile md:px-margin-tablet xl:px-margin flex items-center justify-between gap-space-lg">
         <div class="flex items-center gap-space-xl flex-1 min-w-0"><a
-                class="flex items-center gap-space-sm flex-shrink-0" data-path="inicio" href="#"><img alt="Netflix Logo"
-                                                                                                      class="h-8 w-auto object-contain"
-                                                                                                      src="https://lh3.googleusercontent.com/aida/AEtjO1VSjgSVFjrU9QddTzdlHWZV0NEC9PhE4hUgtIzqQ6V3ahPnHsEWsKBvv655Co2PpeGI13d8fRGYBn1VY9jxRB_D2-9wOEypwMGmyQeCxHVNkoE6pPfjoYQq0zBOFIBhrEMHsZcN-ssGRHRIDsRhm4-kpk3P25ZIF5Xa9qbIeZkEznp_6kwDE9kR1_7N75buVMCkVjvCVU1A2MorZ1_hG7rY8V5e8DvyQ6lWfa1-6ZHDIa3GVnk7oKSTuQ"/><span
-                    class="sr-only">Netflix</span></a>
+                    class="flex items-center gap-space-sm flex-shrink-0" data-path="inicio" href="#">
+                <img alt="Netflix Logo" class="h-8 w-auto object-contain"
+                     src="app/Views/frontend/images/logo.png"/><span
+                        class="sr-only">Netflix</span></a>
             <nav class="hidden lg:flex items-center gap-space-lg overflow-x-auto py-space-xs"
-                 data-active-classes="text-on-surface font-headline-md font-bold tracking-normal"><a aria-current="page"
-                                                                                                     class="transition-colors whitespace-nowrap text-on-surface font-headline-md font-bold tracking-normal"
-                                                                                                     data-path="inicio"
-                                                                                                     href="#">Inicio</a><a
-                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
-                    data-path="series-tv" href="#">Series TV</a><a
-                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
-                    data-path="peliculas" href="#">Películas</a><a
-                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
-                    data-path="videojuegos" href="#">Videojuegos</a><a
-                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
-                    data-path="novedades-populares" href="#">Novedades populares</a><a
-                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
-                    data-path="mi-lista" href="#">Mi lista</a></nav>
+                 data-active-classes="text-on-surface font-headline-md font-bold tracking-normal">
+                <a aria-current="page"
+                   class="transition-colors whitespace-nowrap text-on-surface font-headline-md font-bold tracking-normal"
+                   data-path="inicio"
+                   href="/">Inicio</a><a
+                        class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                        data-path="series-tv" href="#">Series TV</a><a
+                        class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                        data-path="peliculas" href="#">Películas</a><a
+                        class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                        data-path="videojuegos" href="#">Videojuegos</a><a
+                        class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                        data-path="novedades-populares" href="#">Novedades populares</a><a
+                        class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                        data-path="mi-lista" href="#">Mi lista</a></nav>
         </div>
         <div class="flex items-center gap-space-md flex-shrink-0">
             <div class="relative flex items-center">
@@ -174,13 +191,25 @@
             <button aria-label="Notificaciones"
                     class="relative flex items-center justify-center p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"
                     type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span
-                    class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span>
+                        class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span>
             </button>
-            <div class="flex items-center gap-space-xs cursor-pointer group relative py-space-xs">
-                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
-                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
-                <span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-on-surface transition-transform duration-200 group-hover:rotate-180">arrow_drop_down</span>
-            </div>
+            <?php
+                if(!isset($_SESSION['user'])){
+                    echo "
+                       <a href='/login'><button class='flex items-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary-container px-space-md py-2 rounded-lg font-label-md text-label-md transition-all shadow-md active:scale-95' name='bt_login'>Iniciar Sesión</button></a>
+                    ";
+                }else{
+                    echo "
+                        <div class='flex items-center gap-space-xs cursor-pointer group relative py-space-xs'>
+                            <div class='w-8 h-8 rounded-full bg-primary flex items-center justify-center'>
+                                <span class='material-symbols-outlined text-on-primary text-[18px]'>person</span>
+                            </div>
+                            <span class='material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-on-surface transition-transform duration-200 group-hover:rotate-180'>arrow_drop_down</span>
+                        </div>
+                    ";
+                }
+                ?>
+
         </div>
     </div>
 </header>

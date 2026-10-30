@@ -2,6 +2,7 @@
 
 namespace Matomas\Proyecto1\Controllers;
 
+use Matomas\Proyecto1\Class\Auxiliar;
 use Matomas\Proyecto1\Class\User;
 use Matomas\Proyecto1\Interfaces\ControllerInterface;
 use Matomas\Proyecto1\Models\UserModel;
@@ -12,24 +13,53 @@ class UserController implements ControllerInterface
 
     public function index()
     {
+
+
         //Necesito preguntar al modelo y que me de un array con
         //los objetos que representen todos los usuarios que hay en la BD
 
         $usuarios=UserModel::getUsers();
 
 
-        //Tengo que crear una vista donde se muestre una
-        // tabla con todos los usuarios
-        $titulo = "Gestión de usuarios";
-        $descripcion = "Usuarios registrados en el sistema";
-        include_once "app/Views/backend/admin.users.index.php";
+        if (Auxiliar::isApiRequest()){
+
+            //Responderíamos en formato JSON
+            http_response_code(200);
+            return json_encode([
+               "error"=>false,
+               "message"=>"Datos de todos los usuarios del sistema",
+               "data"=>$usuarios,
+               "code"=>200
+            ]);
+        }else{
+
+            //Tengo que crear una vista donde se muestre una
+            // tabla con todos los usuarios
+            $titulo = "Gestión de usuarios";
+            $descripcion = "Usuarios registrados en el sistema";
+            include_once "app/Views/backend/admin.users.index.php";
+
+        }
+
+
 
     }
 
     public function show(int $id)
     {
-        $titulo = "Datos del usuario $id";
-        include_once "app/Views/backend/admin.users.show.php";
+        //Comprobamos que el usuario exista en la BD
+        $usuario = UserModel::getUserById($id);
+        if (!$usuario){
+            $error = "No se ha podido encontrar el usuario buscado";
+            include_once "app/Views/error.php";
+        }else{
+
+            $titulo = "Datos del usuario $id";
+            $descripcion = "Información almacenada de la base de datos del usuario $id";
+            include_once "app/Views/backend/admin.users.show.php";
+        }
+
+
     }
 
     public function create()
@@ -64,10 +94,6 @@ class UserController implements ControllerInterface
                 return "Error al modificar el usuario";
             }
         }
-
-
-
-
     }
 
 

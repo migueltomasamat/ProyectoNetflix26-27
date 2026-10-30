@@ -1,12 +1,13 @@
 <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between overflow-y-auto">
     <div class="flex flex-col">
-        <div class="h-16 px-gutter flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur-xl"><img
+        <div class="h-16 px-gutter flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur-xl">
+            <img
                 alt="Netflix-style bold red monogram letter N icon with sharp cinematic ribbon gradient. Brand logo. - Primary color: #e50914
 - Font: inter
 - Mode: dark
 - Roundness: rounded-sm
 " class="h-8 w-auto object-contain"
-                src="app/Views/backend/img/netflix-logo.png"/>
+                src="/app/Views/backend/img/netflix-logo.png"/>
             <div class="flex flex-col"><span
                     class="font-label-md text-label-md text-on-surface tracking-tight uppercase">Netflix Studio</span><span
                     class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Control Center</span>

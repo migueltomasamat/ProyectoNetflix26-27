@@ -6,8 +6,8 @@ use Ramsey\Uuid\Uuid;
 
 class Content
 {
-    private string $uuid;
-    private string $name;
+    protected string $uuid;
+    protected string $name;
 
     public function __construct(string $uuid)
     {

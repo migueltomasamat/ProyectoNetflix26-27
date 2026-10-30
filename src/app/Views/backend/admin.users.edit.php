@@ -36,7 +36,7 @@
                     </button></a>
             </div>
         </div>
-        <!-- Table Component -->
+        <!-- Form Component -->
         <div class="overflow-x-auto w-full">
             <div class="bg-dark shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div class="mb-4">

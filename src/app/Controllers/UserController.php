@@ -6,6 +6,7 @@ use Matomas\Proyecto1\Class\Auxiliar;
 use Matomas\Proyecto1\Class\User;
 use Matomas\Proyecto1\Interfaces\ControllerInterface;
 use Matomas\Proyecto1\Models\UserModel;
+use function Respect\Stringifier\stringify;
 
 
 class UserController implements ControllerInterface
@@ -25,6 +26,7 @@ class UserController implements ControllerInterface
 
             //Responderíamos en formato JSON
             http_response_code(200);
+            header("Content-Type: application/json");
             return json_encode([
                "error"=>false,
                "message"=>"Datos de todos los usuarios del sistema",
@@ -49,16 +51,37 @@ class UserController implements ControllerInterface
     {
         //Comprobamos que el usuario exista en la BD
         $usuario = UserModel::getUserById($id);
+
         if (!$usuario){
-            $error = "No se ha podido encontrar el usuario buscado";
-            include_once "app/Views/error.php";
+            if (Auxiliar::isApiRequest()){
+                header("Content-Type: application/json");
+                http_response_code(404);
+                return json_encode([
+                    "error"=>true,
+                    "message"=>"No se ha podido encontrar el usuario buscado",
+                    "code"=>404
+                ]);
+            }else{
+                $error = "No se ha podido encontrar el usuario buscado";
+                include_once "app/Views/error.php";
+            }
         }else{
+            if (Auxiliar::isApiRequest()){
+                header("Content-Type: application/json");
+                http_response_code(200);
+                return json_encode([
+                    "error"=>false,
+                    "message"=>"Datos del usuario $id",
+                    "data"=>$usuario,
+                    "code"=>200
+                ]);
+            }else{
+                $titulo = "Datos del usuario $id";
+                $descripcion = "Información almacenada de la base de datos del usuario $id";
+                include_once "app/Views/backend/admin.users.show.php";
+            }
 
-            $titulo = "Datos del usuario $id";
-            $descripcion = "Información almacenada de la base de datos del usuario $id";
-            include_once "app/Views/backend/admin.users.show.php";
         }
-
 
     }
 
@@ -78,22 +101,60 @@ class UserController implements ControllerInterface
         $datosAModificar['id']=$id;
 
         $validacion = User::validateUserUpdate($datosAModificar);
+        if (is_array($validacion)){
+            //Se ha producido un error de validación
+            header("Content-Type: application/json");
+            http_response_code(400);
+            return json_encode([
+                "error"=>true,
+                "message"=>"Error validando los datos",
+                "data"=>$validacion,
+                "code"=>400
+            ]);
 
-        //Leer un usuario de la base de datos
-        $usuarioAntiguo = UserModel::getUserById($id);
+        }else{
 
-        if($usuarioAntiguo===false){
-            return "No se ha encontrado el usuario a modificar";
-        }else {
+            //Hemos pasado la validación de los datos
 
-            $usuarioNuevo = User::updateFromArray($usuarioAntiguo, $datosAModificar);
+            //Leer un usuario de la base de datos
+            $usuarioAntiguo = UserModel::getUserById($id);
 
-            if (UserModel::updateUser($usuarioNuevo)) {
-                return "Usuario modificado correctamente";
-            } else {
-                return "Error al modificar el usuario";
+            if($usuarioAntiguo===false){
+                    header("Content-Type: application/json");
+                    http_response_code(404);
+                    return json_encode([
+                        "error"=>true,
+                        "message"=>"Usuario no encontrado",
+                        "code"=>404
+                   ]);
+
+            }else {
+
+                $usuarioNuevo = User::updateFromArray($usuarioAntiguo, $datosAModificar);
+
+                if (UserModel::updateUser($usuarioNuevo)) {
+                    header("Content-Type: application/json");
+                    http_response_code(200);
+                    return json_encode([
+                        "error"=>false,
+                        "message"=>"Usuario modificado correctamente",
+                        "code"=>200
+                    ]);
+
+
+                } else {
+                    header("Content-Type: application/json");
+                    http_response_code(404);
+                    return json_encode([
+                        "error"=>true,
+                        "message"=>"Usuario no modificado",
+                        "code"=>404
+                    ]);
+                }
             }
         }
+
+
     }
 
 
@@ -111,15 +172,49 @@ class UserController implements ControllerInterface
 
             //Enviar al modelo la instancia del objeto que debe guardar en la BD
             if (!UserModel::saveUser($usuario)){
-                return "Ha ocurrido un  error de almacenamiento";
+                if (Auxiliar::isApiRequest()){
+                    header("Content-Type: application/json");
+                    http_response_code(409);
+                    return json_encode([
+                        "error"=>true,
+                        "message"=>"Error al crear el usuario en la base de datos",
+                        "code"=>409
+                    ]);
+                }else{
+                    $error= "Ha ocurrido un  error de almacenamiento";
+                    include_once "app/Views/error.php";
+                }
+
             }else{
-                header("Location: /user");
+                if (Auxiliar::isApiRequest()){
+                    header("Content-Type: application/json");
+                    http_response_code(201);
+                    return json_encode([
+                        "error"=>false,
+                        "message"=>"Usuario creado correctamente",
+                        "code"=>201
+                    ]);
+                }else{
+                    header("Location: /user");
+                }
+
             }
         }else{
             //Ha habido errores de validación
-            foreach ($validacion as $error){
-                echo $error;
+            if (Auxiliar::isApiRequest()){
+                header("Content-Type: application/json");
+                http_response_code(400);
+                return json_encode([
+                    "error"=>true,
+                    "message"=>"Validación de datos de usuario incorrecta",
+                    "data"=>$validacion,
+                    "code"=>400
+                ]);
+            }else{
+                $error= stringify($validacion);
+                include_once "app/Views/error.php";
             }
+
         }
 
     }
@@ -129,8 +224,13 @@ class UserController implements ControllerInterface
         //Necesito recuperar el usuario de la base de datos
         $usuario = UserModel::getUserById($id);
 
-        //Voy a incluir la vista de edición de datos
-        include_once "app/Views/backend/admin.users.edit.php";
+        if (!$usuario){
+            $error="No se ha podido encontrar el usuario en la base de datos";
+            include_once "app/View/error.php";
+        }else{
+            //Voy a incluir la vista de edición de datos
+            include_once "app/Views/backend/admin.users.edit.php";
+        }
 
     }
 
@@ -139,6 +239,7 @@ class UserController implements ControllerInterface
 
         if(UserModel::deleteUser($id)){
             //Si se ha borrado correctamente
+            header("Content-Type: application/json");
             http_response_code(200);
             header('Content-Type: application/json');
             return json_encode([
@@ -149,6 +250,7 @@ class UserController implements ControllerInterface
 
         }else{
             //Si ha ocurrido algun fallo
+            header("Content-Type: application/json");
             http_response_code(404);
             header('Content-Type: application/json');
             return json_encode([
@@ -178,12 +280,16 @@ class UserController implements ControllerInterface
                 header('Location: /user');
 
             }else{
-                return "La contraseña es incorrecta";
+                $error="La contraseña es incorrecta";
+                include_once "app/View/error.php";
+                header("Refresh:5; url=/signin");
             }
 
 
         }else{
-            return "No se ha podido encontrar el usuario";
+            $error="No se ha podido encontrar el usuario";
+            include_once "app/View/error.php";
+            header("Refresh:5; url=/signin");
         }
 
 

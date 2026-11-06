@@ -8,7 +8,7 @@ interface ControllerInterface
     public function index();
 
     //Ver un solo usuario
-    public function show(int $id);
+    public function show($id);
 
     //Crear un usuario
     public function create();
@@ -16,11 +16,11 @@ interface ControllerInterface
     public function store();
 
     //Modificar un usuario
-    public function update(int $id);
+    public function update($id);
 
-    public function edit(int $id);
+    public function edit($id);
 
     //Borrar un usuario
-    public function destroy(int $id);
+    public function destroy($id);
 
 }

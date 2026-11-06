@@ -23,10 +23,23 @@ CREATE TABLE peliculas(
 );
 //
 
+CREATE TABLE videojuegos(
+    uuid varchar(32) primary key,
+    name varchar(255),
+    platform varchar(50),
+    players int
+);//
+
 create table users_peliculas(
     id_user int references users(id) on delete cascade ,
     uuid_pelicula varchar(32) references peliculas(uuid) on delete cascade ,
     constraint pk_users_peliculas primary key (id_user,uuid_pelicula)
+);
+
+create table users_videojuegos(
+    id_user int references users(id) on delete cascade ,
+    uuid_videojuegos varchar(32) references videojuegos(uuid) on delete cascade ,
+    constraint pk_users_peliculas primary key (id_user,uuid_videojuegos)
 );
 
 //

@@ -47,7 +47,7 @@ class UserController implements ControllerInterface
 
     }
 
-    public function show(int $id)
+    public function show($id)
     {
         //Comprobamos que el usuario exista en la BD
         $usuario = UserModel::getUserById($id);
@@ -92,7 +92,7 @@ class UserController implements ControllerInterface
         include_once "app/Views/backend/admin.users.create.php";
     }
 
-    public function update(int $id)
+    public function update($id)
     {
 
         $datosAModificar=
@@ -219,7 +219,7 @@ class UserController implements ControllerInterface
 
     }
 
-    public function edit(int $id)
+    public function edit($id)
     {
         //Necesito recuperar el usuario de la base de datos
         $usuario = UserModel::getUserById($id);
@@ -234,7 +234,7 @@ class UserController implements ControllerInterface
 
     }
 
-    public function destroy(int $id)
+    public function destroy($id)
     {
 
         if(UserModel::deleteUser($id)){

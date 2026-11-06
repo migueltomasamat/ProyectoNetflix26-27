@@ -213,4 +213,36 @@ class UserModel
 
     }
 
+    public static function getUserMovies(User $user):array{
+        $conexion = "";
+        try{
+
+            $conexion = new PDO("mysql:host=mariadb;dbname=netflix",
+                "miguel","leugim");
+            $conexion->setAttribute(PDO::ATTR_ERRMODE,
+                PDO::ERRMODE_EXCEPTION);
+
+
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+
+        $sql="SELECT peliculas.uuid, peliculas.name, peliculas.length, peliculas.synopsis, peliculas.type FROM users join peliculas where id=:id";
+        $stmt = $conexion->prepare($sql);
+
+        $stmt->bindValue("id",$user->getId(),PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $resultado = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+        if ($resultado){
+            return $resultado;
+        }else{
+            return false;
+        }
+
+    }
+
 }

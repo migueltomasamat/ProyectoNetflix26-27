@@ -14,11 +14,32 @@ class Pelicula extends Content implements \JsonSerializable
     private array $type;
     private MovieClassification $classification;
 
-   public function __construct()
+   public function __construct(string $uuid)
    {
-       parent::__construct(Uuid::uuid4());
+       parent::__construct($uuid);
+        $this->type = [];
 
    }
+
+    public static function createFromArray(array $movieData)
+    {
+        $pelicula = "";
+        if(isset($movieData['uuid'])){
+            //Queremos crear una instancia desde la base de datos
+            $pelicula = new Pelicula($movieData['uuid']);
+
+        }else{
+            //Queremos crear una instancia con los datos obtenidos en una peticion post
+            $pelicula = new Pelicula(Uuid::uuid4()->toString());
+        }
+
+        $pelicula->setName($movieData['name']);
+        $pelicula->setLength($movieData['length']);
+        $pelicula->setClassification(MovieClassification::fromString($movieData['classification']));
+        $pelicula->setSynopsis($movieData['synopsis']);
+        $pelicula->setType($movieData['type']);
+
+    }
 
     public function jsonSerialize(): mixed
     {
@@ -74,6 +95,8 @@ class Pelicula extends Content implements \JsonSerializable
         $this->classification = $classification;
         return $this;
     }
+
+
 
 
 }

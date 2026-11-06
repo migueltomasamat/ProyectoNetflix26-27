@@ -105,6 +105,11 @@ class User implements \JsonSerializable
         return $this->usedContent;
     }
 
+    public function setUserContent(array $content):User{
+        $this->usedContent = $content;
+        return $this;
+    }
+
 
     public function jsonSerialize(): mixed
     {
@@ -151,6 +156,7 @@ class User implements \JsonSerializable
             $usuario->setBirthdate(
                 \DateTime::createFromFormat('Y-m-d','1900-01-01'));
         }
+
 
 
         return $usuario;
@@ -252,7 +258,7 @@ class User implements \JsonSerializable
     public function searchContent(Content $content):int|false{
 
         for ($i=0;$i<count($this->usedContent);$i++){
-            if ($media->getUuid()===$content->getUuid()){
+            if ($this->usedContent[$i]->getUuid()===$content->getUuid()){
                 return $i;
             }
         }

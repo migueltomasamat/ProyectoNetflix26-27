@@ -9,10 +9,11 @@ class PeliculaController implements ControllerInterface
 
     public function index()
     {
-        // TODO: Implement index() method.
+
+
     }
 
-    public function show(int $id)
+    public function show($id)
     {
         // TODO: Implement show() method.
     }
@@ -22,7 +23,7 @@ class PeliculaController implements ControllerInterface
         // TODO: Implement create() method.
     }
 
-    public function update(int $id)
+    public function update($id)
     {
         // TODO: Implement update() method.
     }
@@ -34,12 +35,12 @@ class PeliculaController implements ControllerInterface
         // TODO: Implement store() method.
     }
 
-    public function edit(int $id)
+    public function edit($id)
     {
         // TODO: Implement edit() method.
     }
 
-    public function destroy(int $id)
+    public function destroy($id)
     {
         // TODO: Implement destroy() method.
     }

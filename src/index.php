@@ -56,6 +56,11 @@ $router->get('/error',function(){
 
 
 
+$router->get('pruebaEnum',function(){
+    var_dump(\Matomas\Proyecto1\Enums\MovieClassification::casos());
+});
+
+
 
 
 

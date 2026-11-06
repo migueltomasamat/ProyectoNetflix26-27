@@ -2,6 +2,7 @@
 
 namespace Matomas\Proyecto1\Class;
 
+use Matomas\Proyecto1\Enums\UserType;
 use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validator as v;
 
@@ -15,6 +16,7 @@ class User implements \JsonSerializable
     private \DateTime $birthdate;
     private string $password;
     private string $email;
+
     private array $usedContent;
 
     public function __construct(){
@@ -101,12 +103,6 @@ class User implements \JsonSerializable
     public function getUsedContent(): array
     {
         return $this->usedContent;
-    }
-
-    public function setUsedContent(array $usedContent): User
-    {
-        $this->usedContent = $usedContent;
-        return $this;
     }
 
 
@@ -233,5 +229,44 @@ class User implements \JsonSerializable
 
         return $usuarioAntiguo;
 
+    }
+
+    public function addContent (Content $content):void{
+
+        if (!$this->searchContent($content)) {
+            $this->usedContent[] = $content;
+        }
+    }
+    public function deleteContent (Content $content):bool{
+
+        $resultado = $this->searchContent($content);
+        if (!$resultado){
+            return false;
+        }else{
+            unset($this->usedContent,$this->usedContent[$resultado]);
+            return true;
+        }
+
+    }
+
+    public function searchContent(Content $content):int|false{
+
+        for ($i=0;$i<count($this->usedContent);$i++){
+            if ($media->getUuid()===$content->getUuid()){
+                return $i;
+            }
+        }
+        return false;
+
+    }
+
+    public function editContent(Content $newContent){
+        $resultado = $this->searchContent($newContent);
+        if (!$resultado){
+            return false;
+        }else{
+            $this->usedContent[$resultado]=$newContent;
+            return true;
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Matomas\Proyecto1\Models;
 
+use Matomas\Proyecto1\Class\Pelicula;
 use Matomas\Proyecto1\Class\User;
 use PDO;
 use PDOException;
@@ -126,7 +127,9 @@ class UserModel
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($resultado){
-            return User::createFromArray($resultado);
+            $usuario = User::createFromArray($resultado);
+            $usuario->setUserContent(UserModel::getUserMovies($usuario));
+            return $usuario;
         }else{
             return false;
         }
@@ -228,7 +231,9 @@ class UserModel
         }
 
 
-        $sql="SELECT peliculas.uuid, peliculas.name, peliculas.length, peliculas.synopsis, peliculas.type FROM users join peliculas where id=:id";
+        $sql="SELECT peliculas.uuid, peliculas.name, peliculas.length, peliculas.synopsis, peliculas.classification 
+        FROM users join netflix.users_peliculas on users.id = users_peliculas.id_user join netflix.peliculas on users_peliculas.uuid_pelicula = peliculas.uuid 
+        where id=:id";
         $stmt = $conexion->prepare($sql);
 
         $stmt->bindValue("id",$user->getId(),PDO::PARAM_INT);
@@ -238,7 +243,13 @@ class UserModel
         $resultado = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
         if ($resultado){
-            return $resultado;
+            $peliculas=[];
+            foreach ($resultado as $content){
+                $content['type']=PeliculaModel::getPeliculaGeneres($content['uuid']);
+                $peliculas[]= Pelicula::createFromArray($content);
+
+            }
+            return $peliculas;
         }else{
             return false;
         }

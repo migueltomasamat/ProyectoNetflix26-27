@@ -21,7 +21,7 @@ class Pelicula extends Content implements \JsonSerializable
 
    }
 
-    public static function createFromArray(array $movieData)
+    public static function createFromArray(array $movieData):Pelicula
     {
         $pelicula = "";
         if(isset($movieData['uuid'])){
@@ -37,7 +37,8 @@ class Pelicula extends Content implements \JsonSerializable
         $pelicula->setLength($movieData['length']);
         $pelicula->setClassification(MovieClassification::fromString($movieData['classification']));
         $pelicula->setSynopsis($movieData['synopsis']);
-        $pelicula->setType($movieData['type']);
+        $pelicula->setType(($movieData['type']));
+        return $pelicula;
 
     }
 

@@ -119,6 +119,7 @@ class User implements \JsonSerializable
             'address' => $this->address,
             'phone' => $this->phone,
             'birthdate' => $this->birthdate->format('Y-m-d'),
+            'usedContent'=> $this->usedContent
         ];
     }
 

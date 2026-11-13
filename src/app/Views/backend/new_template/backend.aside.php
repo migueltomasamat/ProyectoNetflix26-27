@@ -21,13 +21,13 @@
                     data-path="catalogo-global" href="/movie/add"><span
                         class="material-symbols-outlined text-[18px]">grid_view</span><span>Nueva Película</span></a><a
                     class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="peliculas" href="#"><span
+                    data-path="peliculas" href="/movie"><span
                         class="material-symbols-outlined text-[18px]">movie</span><span>Películas</span></a><a
                     class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
                     data-path="series-de-tv" href="#"><span
                         class="material-symbols-outlined text-[18px]">tv</span><span>Series de TV</span></a><a
                     class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
-                    data-path="videojuegos" href="#"><span
+                    data-path="videojuegos" href="/videogame"><span
                         class="material-symbols-outlined text-[18px]">sports_esports</span><span>Videojuegos</span></a><a
                     class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md"
                     data-path="estrenos-programados" href="#"><span class="material-symbols-outlined text-[18px]">schedule</span><span>Estrenos programados</span></a>
@@ -55,7 +55,7 @@
             <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
                     class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
             <div class="flex flex-col"><span
-                    class="font-label-md text-label-md text-on-surface truncate"><?=$_SESSION['user']->getName()?></span><span
+                    class="font-label-md text-label-md text-on-surface truncate"><?php if(isset($_SESSION['user'])){echo $_SESSION['user']->getName();}else{echo "Sin usuario";}?></span><span
                     class="font-body-sm text-body-sm text-outline">Admin General</span></div>
         </div>
         <div class="flex items-center gap-space-xs bg-surface-container-highest px-space-xs py-[2px] rounded"><span

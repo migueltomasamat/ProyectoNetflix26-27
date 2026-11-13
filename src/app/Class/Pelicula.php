@@ -37,7 +37,7 @@ class Pelicula extends Content implements \JsonSerializable
         $pelicula->setLength($movieData['length']);
         $pelicula->setClassification(MovieClassification::fromString($movieData['classification']));
         $pelicula->setSynopsis($movieData['synopsis']);
-        $pelicula->setType(($movieData['type']));
+        $pelicula->setType($movieData['type']);
         return $pelicula;
 
     }
@@ -95,6 +95,19 @@ class Pelicula extends Content implements \JsonSerializable
     {
         $this->classification = $classification;
         return $this;
+    }
+
+
+    public function convertTypeToString():string{
+       $salida = "";
+       if (count($this->type)>0){
+           foreach ($this->type as $genero){
+               $salida.=$genero.",";
+           }
+           $salida = substr($salida,0,-1);
+       }
+        return $salida;
+
     }
 
 

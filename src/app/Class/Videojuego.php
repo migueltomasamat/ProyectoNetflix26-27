@@ -54,4 +54,18 @@ class Videojuego extends Content implements \JsonSerializable
             "players"=>$this->players
         ];
     }
+
+    public static function createFromArray(array $videogameData):Videojuego{
+
+        $videojuego = new Videojuego();
+
+        $videojuego->uuid=$videogameData['uuid'];
+        $videojuego->name=$videogameData['name'];
+        $videojuego->platform=PlatformType::fromString($videogameData['platform']);
+        $videojuego->players=$videogameData['players'];
+
+
+        return $videojuego;
+
+    }
 }

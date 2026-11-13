@@ -27,13 +27,13 @@ $router->filter('auth', function(){
 
 
 //Rutas de usuario
-$router->get('/user/create',[UserController::class,'create'],['before' => 'auth']);
-$router->get('/user/{id}/edit',[UserController::class,'edit'],['before' => 'auth']);
+$router->get('/user/create',[UserController::class,'create']);
+$router->get('/user/{id:i}/edit',[UserController::class,'edit'],['before' => 'auth']);
 $router->get('/user',[UserController::class,'index'],['before' => 'auth']);
-$router->get('/user/{id}',[UserController::class,'show']);
+$router->get('/user/{id:i}',[UserController::class,'show']);
 $router->post('/user',[UserController::class,'store']);
-$router->put('/user/{id}',[UserController::class,'update']);
-$router->delete('/user/{id}',[UserController::class,'destroy']);
+$router->put('/user/{id:i}',[UserController::class,'update']);
+$router->delete('/user/{id:i}',[UserController::class,'destroy']);
 
 
 //Rutas de login
@@ -44,21 +44,23 @@ $router->get('/logout',[UserController::class,'logout']);
 
 //Rutas de API
 $router->get('/api/user',[UserController::class,'index']);
-$router->get('/api/user/{id}',[UserController::class,'show']);
+$router->get('/api/user/{id:i}',[UserController::class,'show']);
 $router->post('/api/user',[UserController::class,'store']);
-$router->put('/api/user/{id}',[UserController::class,'update']);
-$router->delete('/api/user/{id}',[UserController::class,'destroy']);
+$router->put('/api/user/{id:i}',[UserController::class,'update']);
+$router->delete('/api/user/{id:i}',[UserController::class,'destroy']);
 
 $router->get('/error',function(){
     include_once "app/Views/error.php";
 });
 
 
-
-
-$router->get('pruebaEnum',function(){
-    var_dump(\Matomas\Proyecto1\Enums\MovieClassification::casos());
-});
+$router->get('/movie/create',[PeliculaController::class,'create']);
+$router->get('/movie/{id:c}/edit',[PeliculaController::class,'edit']);
+$router->get('/movie',[PeliculaController::class,'index']);
+$router->get('/movie/{id:c}',[PeliculaController::class,'show']);
+$router->post('/movie',[PeliculaController::class,'store']);
+$router->put('/movie/{id:c}',[PeliculaController::class,'update']);
+$router->delete('/movie/{id:c}',[PeliculaController::class,'destroy']);
 
 
 
@@ -82,33 +84,7 @@ $router->get('/admin', function(){
     include_once "app/Views/backend/admin.index.php";
 });
 
-$router->get('/admin/peliculas', function(){
-    $title = "Admin Peliculas";
-    include_once "app/Views/backend/admin.index.php";
-});
 
-
-
-//Rutas de ejemplos
-
-$router->get('/get-uuid', function(){
-    return \Ramsey\Uuid\Uuid::uuid4()->toString();
-});
-
-$router->get('/obtener-pass',function(){
-    include_once "ejemplos/funciones.php";
-    echo create_pass();
-});
-
-$router->get('/movie/add',function(){
-    include_once "app/Views/backend/admin.movie.add.php";
-});
-$router->post('/movie',function(){
-   //Que hacemos con los datos de la pelicula
-
-    var_dump($_POST);
-    manageFiles($_FILES);
-});
 
 
 

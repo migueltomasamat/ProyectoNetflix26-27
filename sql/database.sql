@@ -67,6 +67,8 @@ insert into users (name, address, phone, birthdate, password, email)
 values ('Carlos Martinez','Av. Reina Sofia','965551515',
         STR_TO_DATE('26/05/2022','%d/%c/%Y'),'12345678'
            ,'carlos@email.com');
+INSERT INTO netflix.users (id, name, address, phone, birthdate, password, email) VALUES (2, 'Miguel', 'Calle Reina Sofia, 20', '965551555', '2026-11-09', '$2y$10$.UNRBLjJBpXAY76qx7un.e0hELwrmRdoRQAgzXcBkgZwcXI0hu6p6', 'miguel@email.com');
+
 //
 
 insert into peliculas (uuid, name, length, synopsis, classification)
@@ -76,6 +78,12 @@ values ('f8f7104e-08dc-4ab9-abd9-92c05db1ee01','Terminator 2',
 insert into peliculas (uuid, name, length, synopsis, classification)
 values ('f3a27474-ae61-4798-a8dc-fd02b0fc8598','Los Vengadores',
         145,'Matan a Thanos','PG-13');
+
+insert into videojuegos (uuid, name, platform, players)
+values('10d5f111-e2eb-4a09-8ab9-5a8fd655a90b','The last of us','PS5',1);
+
+insert into videojuegos (uuid, name, platform, players)
+values('83359aa3-496d-4660-985a-6da09bc0d195','Uncharted','PS5',1);
 
 insert into genere (name) value ('Comedia');
 insert into genere (name) value ('Drama');
@@ -96,5 +104,10 @@ insert into users_peliculas (id_user, uuid_pelicula)
 values (1,'f8f7104e-08dc-4ab9-abd9-92c05db1ee01');
 insert into users_peliculas (id_user, uuid_pelicula)
 values (1,'f3a27474-ae61-4798-a8dc-fd02b0fc8598');
+
+insert into users_videojuegos (id_user, uuid_videojuegos)
+values (2,'10d5f111-e2eb-4a09-8ab9-5a8fd655a90b');
+insert into users_videojuegos (id_user, uuid_videojuegos)
+values (2,'83359aa3-496d-4660-985a-6da09bc0d195');
 
 

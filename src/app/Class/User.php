@@ -3,6 +3,7 @@
 namespace Matomas\Proyecto1\Class;
 
 use Matomas\Proyecto1\Enums\UserType;
+use Matomas\Proyecto1\Models\UserModel;
 use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validator as v;
 
@@ -158,6 +159,15 @@ class User implements \JsonSerializable
                 \DateTime::createFromFormat('Y-m-d','1900-01-01'));
         }
 
+        $movies= UserModel::getUserMovies($usuario);
+        if ($movies!==false){
+            $usuario->addMultipleContent($movies);
+        }
+        $videogames = UserModel::getUserVideogames($usuario);
+        if($videogames!==false){
+            $usuario->addMultipleContent($videogames);
+        }
+
 
 
         return $usuario;
@@ -275,5 +285,17 @@ class User implements \JsonSerializable
             $this->usedContent[$resultado]=$newContent;
             return true;
         }
+    }
+
+    public function addMultipleContent(?array $contentArray):bool{
+
+        if (isset($contentArray)) {
+            foreach ($contentArray as $content) {
+                $this->addContent($content);
+            }
+            return true;
+        }
+
+        return false;
     }
 }

@@ -55,12 +55,43 @@ class PeliculaModel
 
         $stmt->execute();
 
-        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $resultado = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
         return $resultado;
 
     }
 
+    public static function getAllMovies():array
+    {
+        try{
+            $conexion = new DB();
+
+        }catch (\PDOException $e){
+            echo $e->getMessage();
+        }
+
+        $sql = "SELECT * FROM peliculas";
+        $stmt=$conexion->prepare($sql);
+
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        if ($stmt->rowCount()===0){
+            return [];
+        }else{
+            $peliculas=[];
+            foreach ($resultado as $movie){
+
+                $movie['type']=PeliculaModel::getPeliculaGeneres($movie['uuid']);
+                $pelicula = Pelicula::createFromArray($movie);
+                $peliculas[]=$pelicula;
+
+            }
+            return $peliculas;
+        }
+
+    }
 
 
 }

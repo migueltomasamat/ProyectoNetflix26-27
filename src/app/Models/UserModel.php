@@ -4,6 +4,7 @@ namespace Matomas\Proyecto1\Models;
 
 use Matomas\Proyecto1\Class\Pelicula;
 use Matomas\Proyecto1\Class\User;
+use Matomas\Proyecto1\Class\Videojuego;
 use PDO;
 use PDOException;
 
@@ -128,7 +129,6 @@ class UserModel
 
         if ($resultado){
             $usuario = User::createFromArray($resultado);
-            $usuario->setUserContent(UserModel::getUserMovies($usuario));
             return $usuario;
         }else{
             return false;
@@ -207,7 +207,8 @@ class UserModel
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($resultado){
-            return User::createFromArray($resultado);
+            $usuario= User::createFromArray($resultado);
+            return $usuario;
         }else{
             return false;
         }
@@ -216,7 +217,7 @@ class UserModel
 
     }
 
-    public static function getUserMovies(User $user):array{
+    public static function getUserMovies(User $user):array|false{
         $conexion = "";
         try{
 
@@ -250,6 +251,44 @@ class UserModel
 
             }
             return $peliculas;
+        }else{
+            return false;
+        }
+
+    }
+
+    public static function getUserVideogames(User $user):array|false{
+        $conexion = "";
+        try{
+
+            $conexion = new PDO("mysql:host=mariadb;dbname=netflix",
+                "miguel","leugim");
+            $conexion->setAttribute(PDO::ATTR_ERRMODE,
+                PDO::ERRMODE_EXCEPTION);
+
+
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+
+        $sql="SELECT videojuegos.uuid, videojuegos.name, videojuegos.platform,videojuegos.players 
+        FROM users join netflix.users_videojuegos on users.id = users_videojuegos.id_user join netflix.videojuegos on users_videojuegos.uuid_videojuegos = videojuegos.uuid 
+        where id=:id";
+        $stmt = $conexion->prepare($sql);
+
+        $stmt->bindValue("id",$user->getId(),PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $resultado = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+        if ($resultado){
+            $videojuegos=[];
+            foreach ($resultado as $content){
+                $videojuegos[]= Videojuego::createFromArray($content);
+            }
+            return $videojuegos;
         }else{
             return false;
         }

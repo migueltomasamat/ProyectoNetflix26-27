@@ -281,15 +281,16 @@ class UserController implements ControllerInterface
 
             }else{
                 $error="La contraseña es incorrecta";
-                include_once "app/View/error.php";
-                header("Refresh:5; url=/signin");
+                include_once "app/Views/error.php";
+                header("Refresh:5; url=/login");
             }
 
 
         }else{
             $error="No se ha podido encontrar el usuario";
-            include_once "app/View/error.php";
-            header("Refresh:5; url=/signin");
+            header("Refresh:5; url=/login");
+            include_once "app/Views/error.php";
+
         }
 
 

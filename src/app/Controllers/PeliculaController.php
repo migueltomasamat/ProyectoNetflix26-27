@@ -3,12 +3,17 @@
 namespace Matomas\Proyecto1\Controllers;
 
 use Matomas\Proyecto1\Interfaces\ControllerInterface;
+use Matomas\Proyecto1\Models\PeliculaModel;
 
 class PeliculaController implements ControllerInterface
 {
 
     public function index()
     {
+
+        $peliculas=PeliculaModel::getAllMovies();
+
+        include_once "app/Views/backend/admin.movies.index.php";
 
 
     }
